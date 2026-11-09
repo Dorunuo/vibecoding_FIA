@@ -1,0 +1,112 @@
+
+> node --check src/asset-level.js
+
+> node --check src/audio.js
+
+> node --check src/camera.js
+
+> node --check src/collectibles.js
+
+> node --check src/config.js
+
+> node --check src/demo.js
+
+> node --check src/exit.js
+
+> node --check src/gameplay.js
+
+> node --check src/hazards.js
+
+> node --check src/input.js
+
+> node --check src/level.js
+
+> node --check src/main.js
+
+> node --check src/model-assets.js
+
+> node --check src/player.js
+
+> node --check src/scene.js
+
+> node --check src/ui.js
+
+> node 任务C/穿模扫描与验证.mjs
+可视网格 249，粗筛候选 68，聚簇 13 组待物理探测
+通过 #1 [Hall_Pillar_Base] ×1 网格
+通过 #2 [Hall_Pillar_Base] ×1 网格
+通过 #3 [Hall_Pillar_Base] ×1 网格
+通过 #4 [Hall_Pillar_Base] ×1 网格
+通过 #5 [L1_Base_Trim] ×1 网格
+通过 #6 [L1_Base_Trim] ×1 网格
+通过 #7 [Stair_1_Tread] ×24 网格
+通过 #8 [Archive_Shelf/L2_Base_Trim] ×3 网格
+通过 #9 [L2_Base_Trim] ×1 网格
+通过 #10 [Stair_2_Tread] ×24 网格
+通过 #11 [Cistern_Rim/Dry_Cistern_Basin] ×3 网格
+通过 #12 [Exit_Pier/Exit_Rune/L3_Base_Trim] ×6 网格
+通过 #13 [L3_Base_Trim] ×1 网格
+通过 Stair_1 下层东侧面封锁 停在x=-17.39
+通过 Stair_1 下层西侧面封锁 停在x=-22.61
+通过 Stair_1 梯面侧移受栏杆约束 x=-18.87 (上梯后位于 -20,-3.49,3.02)
+通过 Stair_1 顶端背面封锁 停在z=10.62
+通过 Stair_1 顶端入口畅通 到达y=-5.00 z=-4.03
+通过 Stair_1 底端出口畅通 到达y=0.00 z=14.03
+通过 Stair_2 下层东侧面封锁 停在x=22.61
+通过 Stair_2 下层西侧面封锁 停在x=17.39
+通过 Stair_2 梯面侧移受栏杆约束 x=21.13 (上梯后位于 20,-8.49,-9.48)
+通过 Stair_2 顶端背面封锁 停在z=-1.88
+通过 Stair_2 顶端入口畅通 到达y=-10.00 z=-14.13
+通过 Stair_2 底端出口畅通 到达y=-5.00 z=1.53
+PASS 穿模扫描与楼梯专项全部通过
+
+> node 任务C/demo-controller-test.mjs
+PASS Demo controller: camera transform, pause freeze, real-state waiting, edge inputs, terminal states, stop/restart, step/global timeout, empty route, invalid dt
+
+> node 任务C/main-integration-test.mjs
+PASS 1: Demo WIN/GAME_OVER observed in same production frame; later terminal frames do not update player
+PASS 2: Demo cancel takes priority over pause from PLAYING/PAUSED/WIN/GAME_OVER
+PASS 3: Human Esc pauses/resumes; Demo Start pauses without cancel; paused dt frozen
+PASS 4: Restart resets route/outcome/timers and preserves Demo mode; menu then human does not consume Demo
+PASS 5: Route errors return/reset before menu render, then toast, then renderer; no player update or duplicate RAF
+PASS 6: window blur human pause only; document hidden pauses both and resets input
+All 6 production-main VM integration groups passed. Boundary mocks only: not browser/visual/audio acceptance.
+
+> node 任务C/gameplay-regression.mjs
+PASS 1: 伤害中断临近完成收集，同帧E不能重启，hurt锁保留
+PASS 2: 伤害前未锁定旧快照也不能启动采集；致死优先于收集、开门、胜利
+PASS 3: 临近完成的最后宝藏/出口同帧致死：取消进度且不发collect/open/win
+PASS 4: 离开范围/跌落取消释放collect余锁，但绝不清除hurt锁
+PASS 5: 收集必须站稳同层按边沿；重复E不重置，完成只计一次；快照隔离
+PASS 6: 暂停冻结收集/陷阱/门；重置模式、生命、相位、无敌、计时与事件
+PASS 7: 陷阱三维、扫掠、重叠仅一次、无敌间隔、周期与非法dt
+PASS 8: 出口锁定限频、跨层不触发、集齐开门/胜利各一次与公开胜利动作
+PASS 9: 视觉收集清理/重置/销毁恢复材质与光晕，容器不移位；门复位释放资源
+PASS 10: 实际R2三层配置：同XZ不同楼层不能挖掘，全部可收集并开门
+PASS 11: 真实B公开接口：最短正idle释放collect，不覆盖hurt；胜利无需update同步姿态
+All 11 gameplay regression groups passed. Automated logic/geometry only; no human visual/audio acceptance claimed.
+
+> node 任务C/audio-ui-test.mjs
+PASS WebAudio: all 11 events, unlock retry/suspension/failure, gain/mute, bounds, end/reset/dispose
+PASS DOM simulation: states/HUD/results/Demo guard/help/volume/keyboard/callbacks/dispose
+LIMIT: simulated API and DOM only; no real-browser rendering or human auditory acceptance claimed.
+
+> node 任务C/第2批自动测试.mjs
+PASS：锁门限频、真实挖掘/计数、一次开门、实际出口胜利、暂停、非法dt、快照、20次复位、模式、注入关卡及资源释放。
+
+> node 任务C/主游戏输入自动测试.mjs
+PASS：主游戏画布可聚焦、点击聚焦、W输入驱动真实player移动、松键、斜向、E边沿、失焦/隐藏清键、暂停Esc、监听释放与tabindex恢复。浏览器人工复测待执行。
+
+> node 任务C/demo-integration.mjs
+PASS real Demo WIN dt=0.01667 yaw=0.00 time=52.95s health=3, 3 dig/collect, 1 open/win
+PASS real Demo WIN dt=0.03333 yaw=1.57 time=53.33s health=3, 3 dig/collect, 1 open/win
+PASS real Demo WIN dt=0.00833 yaw=-1.30 time=52.76s health=3, 3 dig/collect, 1 open/win
+PASS real Demo WIN dt=0.05000 yaw=2.40 time=53.70s health=3, 3 dig/collect, 1 open/win
+
+> node --import ./任务C/node-assets.mjs test-asset-integration.mjs
+Stair_1 [ -20, -4.999999992847442, -0.2780334353102802 ]
+Stair_2 [ 20, -9.999999992847442, -12.77803343531029 ]
+PASS: imported character joints/height, spawn floor, both stair descents/ascents, hole fall and imported mesh front vs movement in four camera directions.
+
+PASS exports: identical C2 bundles and inline script syntax.
+ALL AUTOMATED CHECKS PASSED. Real browser visual/audio and human acceptance remain separate.

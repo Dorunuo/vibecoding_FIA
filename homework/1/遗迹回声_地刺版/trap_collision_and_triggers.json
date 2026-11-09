@@ -1,0 +1,113 @@
+{
+  "units": "meters",
+  "blender_axes": "Z up",
+  "traps": [
+    {
+      "id": 1,
+      "type": "static_spikes",
+      "source_hole_level": 1,
+      "level": 2,
+      "root": "Trap_1_Root",
+      "spike_count": 16,
+      "cone_sides": 6,
+      "footprint": [
+        2.2,
+        2.2
+      ],
+      "spike_height_range": [
+        0.78,
+        0.98
+      ],
+      "highest_tip_above_floor": 1.08,
+      "position": [
+        13.75,
+        11.25,
+        -5
+      ],
+      "trigger_center": [
+        13.75,
+        11.25,
+        -4.45
+      ],
+      "trigger_size": [
+        2.2,
+        2.2,
+        1.1
+      ],
+      "trigger_only": true,
+      "trigger_node": "TRIGGER_Trap_1",
+      "base_collider": "COLLIDER_Trap_1_Base",
+      "damage_logic_implemented": false,
+      "damage_amount": null,
+      "position_threejs": [
+        13.75,
+        -5,
+        -11.25
+      ],
+      "trigger_center_threejs": [
+        13.75,
+        -4.45,
+        -11.25
+      ],
+      "trigger_size_threejs": [
+        2.2,
+        1.1,
+        2.2
+      ]
+    },
+    {
+      "id": 2,
+      "type": "static_spikes",
+      "source_hole_level": 2,
+      "level": 3,
+      "root": "Trap_2_Root",
+      "spike_count": 16,
+      "cone_sides": 6,
+      "footprint": [
+        2.2,
+        2.2
+      ],
+      "spike_height_range": [
+        0.78,
+        0.98
+      ],
+      "highest_tip_above_floor": 1.08,
+      "position": [
+        -13.75,
+        -11.25,
+        -10
+      ],
+      "trigger_center": [
+        -13.75,
+        -11.25,
+        -9.45
+      ],
+      "trigger_size": [
+        2.2,
+        2.2,
+        1.1
+      ],
+      "trigger_only": true,
+      "trigger_node": "TRIGGER_Trap_2",
+      "base_collider": "COLLIDER_Trap_2_Base",
+      "damage_logic_implemented": false,
+      "damage_amount": null,
+      "position_threejs": [
+        -13.75,
+        -10,
+        11.25
+      ],
+      "trigger_center_threejs": [
+        -13.75,
+        -9.45,
+        11.25
+      ],
+      "trigger_size_threejs": [
+        2.2,
+        1.1,
+        2.2
+      ]
+    }
+  ],
+  "game_damage_implemented": false
+}

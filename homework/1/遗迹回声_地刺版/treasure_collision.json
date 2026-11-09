@@ -1,0 +1,85 @@
+{
+  "units": "meters",
+  "blender_axes": "Z up",
+  "game_axes": "glTF/Three.js Y up; (x,z,-y)",
+  "boxes": [
+    {
+      "id": 2,
+      "name": "COLLIDER_Treasure_2_Box",
+      "owner": "Treasure_2_Root",
+      "shape": "BOX",
+      "center": [
+        0,
+        9,
+        -4.6
+      ],
+      "size": [
+        1.36,
+        1.08,
+        0.8
+      ],
+      "center_threejs": [
+        0,
+        -4.6,
+        -9
+      ],
+      "size_threejs": [
+        1.36,
+        0.8,
+        1.08
+      ],
+      "blender_rigid_body": "PASSIVE",
+      "interaction_radius_suggestion": 1.8
+    },
+    {
+      "id": 3,
+      "name": "COLLIDER_Treasure_3_Box",
+      "owner": "Treasure_3_Root",
+      "shape": "BOX",
+      "center": [
+        0,
+        6,
+        -9.6
+      ],
+      "size": [
+        1.36,
+        1.08,
+        0.8
+      ],
+      "center_threejs": [
+        0,
+        -9.6,
+        -6
+      ],
+      "size_threejs": [
+        1.36,
+        0.8,
+        1.08
+      ],
+      "blender_rigid_body": "PASSIVE",
+      "interaction_radius_suggestion": 1.8
+    }
+  ],
+  "mounds": [
+    {
+      "id": 1,
+      "proxy": "COLLIDER_Treasure_1_Mound",
+      "owner": "Treasure_1_Root",
+      "position_blender": [
+        0,
+        2,
+        0
+      ],
+      "position_threejs": [
+        0,
+        0,
+        -2
+      ],
+      "shape": "triangle_mesh",
+      "walkable": true,
+      "do_not_replace_with_full_AABB": true
+    }
+  ],
+  "runtime_collision_integrated": false,
+  "glow_collision": false
+}

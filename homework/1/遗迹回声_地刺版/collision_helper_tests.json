@@ -1,0 +1,146 @@
+{
+  "algorithm": "Conservative 3D swept AABB; tests are not actual game integration.",
+  "tests": [
+    {
+      "box": 2,
+      "name": "front_to_back_blocked",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": false
+    },
+    {
+      "box": 2,
+      "name": "side_to_side_blocked",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": false
+    },
+    {
+      "box": 2,
+      "name": "fast_move_no_tunnelling",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": false
+    },
+    {
+      "box": 2,
+      "name": "fall_lands_above_lid",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": false
+    },
+    {
+      "box": 2,
+      "name": "walk_above_lid_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    },
+    {
+      "box": 2,
+      "name": "jump_over_box_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    },
+    {
+      "box": 2,
+      "name": "side_bypass_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    },
+    {
+      "box": 2,
+      "name": "existing_overlap_reported",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": true
+    },
+    {
+      "box": 2,
+      "name": "stationary_outside_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    },
+    {
+      "box": 2,
+      "name": "move_away_from_boundary_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    },
+    {
+      "box": 3,
+      "name": "front_to_back_blocked",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": false
+    },
+    {
+      "box": 3,
+      "name": "side_to_side_blocked",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": false
+    },
+    {
+      "box": 3,
+      "name": "fast_move_no_tunnelling",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": false
+    },
+    {
+      "box": 3,
+      "name": "fall_lands_above_lid",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": false
+    },
+    {
+      "box": 3,
+      "name": "walk_above_lid_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    },
+    {
+      "box": 3,
+      "name": "jump_over_box_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    },
+    {
+      "box": 3,
+      "name": "side_bypass_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    },
+    {
+      "box": 3,
+      "name": "existing_overlap_reported",
+      "passed": true,
+      "blocked": true,
+      "initialOverlap": true
+    },
+    {
+      "box": 3,
+      "name": "stationary_outside_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    },
+    {
+      "box": 3,
+      "name": "move_away_from_boundary_allowed",
+      "passed": true,
+      "blocked": false,
+      "initialOverlap": false
+    }
+  ],
+  "passed": 20
+}

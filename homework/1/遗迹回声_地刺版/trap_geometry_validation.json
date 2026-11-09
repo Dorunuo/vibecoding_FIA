@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "spikes": 16,
+    "all_meshes_inside_trigger": true,
+    "outside_meshes": [],
+    "aligned_with_hole": true,
+    "base_is_passive_box": true,
+    "visual_triangles": 172
+  },
+  {
+    "id": 2,
+    "spikes": 16,
+    "all_meshes_inside_trigger": true,
+    "outside_meshes": [],
+    "aligned_with_hole": true,
+    "base_is_passive_box": true,
+    "visual_triangles": 172
+  }
+]

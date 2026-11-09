@@ -1,0 +1,53 @@
+{
+  "checks": {
+    "two_traps_32_six_sided_cones": true,
+    "traps_aligned_with_holes": true,
+    "trigger_encloses_spikes": true,
+    "nine_standing_spaces_clear": true,
+    "safe_routes_avoid_hazards": true,
+    "fall_landings_intentionally_hazardous": true,
+    "box_collision_tests_passed": true,
+    "all_glb_reimports_passed": true,
+    "game_manifest_has_stands_and_hazards": true
+  },
+  "glb": [
+    {
+      "file": "遗迹回声_地刺碰撞与触发.glb",
+      "triangles": 48,
+      "mesh_count": 4,
+      "embedded_images": 0,
+      "all_images_embedded": true,
+      "trigger_count": 2
+    },
+    {
+      "file": "遗迹回声_女性角色1000.glb",
+      "triangles": 1000,
+      "mesh_count": 19,
+      "embedded_images": 1,
+      "all_images_embedded": true
+    },
+    {
+      "file": "遗迹回声_寻宝碰撞体.glb",
+      "triangles": 70,
+      "mesh_count": 3,
+      "embedded_images": 0,
+      "all_images_embedded": true
+    },
+    {
+      "file": "遗迹回声_金光遗迹.glb",
+      "triangles": 14587,
+      "mesh_count": 593,
+      "embedded_images": 6,
+      "all_images_embedded": true,
+      "spike_nodes": 32
+    }
+  ],
+  "old_gold_project_unchanged": true,
+  "character_unchanged": true,
+  "game_damage_logic_implemented": false,
+  "game_interaction_animation_tested": false,
+  "actual_game_collision_integrated": false,
+  "full_glb_reimport_completed": true,
+  "reimport_note": "Client request timed out, but the GUI import finished later; all four success reports were subsequently read and confirmed. Binary structure, buffers, UVs, embedded images and counts also checked.",
+  "image_review": "Images rendered and file-checked; not visually inspected by this image-incapable model."
+}

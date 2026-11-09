@@ -1,0 +1,234 @@
+{
+  "units": "meters",
+  "player_radius_for_geometry_checks": 0.62,
+  "reserved_radius": 0.75,
+  "points": [
+    {
+      "name": "Interaction_Treasure_1_Front",
+      "treasure_id": 1,
+      "level": 1,
+      "preferred": true,
+      "position": [
+        0,
+        -0.04999999999999982,
+        0
+      ],
+      "position_threejs": [
+        0,
+        0,
+        0.04999999999999982
+      ],
+      "reserved_body_turn_radius": 0.75,
+      "reserved_height": 1.79,
+      "facing_direction_blender": [
+        0.0,
+        1.0,
+        0
+      ],
+      "recommended_interaction_range": 2.3,
+      "animation_runtime_tested": false
+    },
+    {
+      "name": "Interaction_Treasure_1_Left",
+      "treasure_id": 1,
+      "level": 1,
+      "preferred": false,
+      "position": [
+        -2.05,
+        2,
+        0
+      ],
+      "position_threejs": [
+        -2.05,
+        0,
+        -2
+      ],
+      "reserved_body_turn_radius": 0.75,
+      "reserved_height": 1.79,
+      "facing_direction_blender": [
+        1.0,
+        0.0,
+        0
+      ],
+      "recommended_interaction_range": 2.3,
+      "animation_runtime_tested": false
+    },
+    {
+      "name": "Interaction_Treasure_1_Right",
+      "treasure_id": 1,
+      "level": 1,
+      "preferred": false,
+      "position": [
+        2.05,
+        2,
+        0
+      ],
+      "position_threejs": [
+        2.05,
+        0,
+        -2
+      ],
+      "reserved_body_turn_radius": 0.75,
+      "reserved_height": 1.79,
+      "facing_direction_blender": [
+        -1.0,
+        0.0,
+        0
+      ],
+      "recommended_interaction_range": 2.3,
+      "animation_runtime_tested": false
+    },
+    {
+      "name": "Interaction_Treasure_2_Front",
+      "treasure_id": 2,
+      "level": 2,
+      "preferred": true,
+      "position": [
+        0,
+        7.55,
+        -5
+      ],
+      "position_threejs": [
+        0,
+        -5,
+        -7.55
+      ],
+      "reserved_body_turn_radius": 0.75,
+      "reserved_height": 1.79,
+      "facing_direction_blender": [
+        0.0,
+        1.0,
+        0
+      ],
+      "recommended_interaction_range": 1.9,
+      "animation_runtime_tested": false
+    },
+    {
+      "name": "Interaction_Treasure_2_Left",
+      "treasure_id": 2,
+      "level": 2,
+      "preferred": false,
+      "position": [
+        -1.6,
+        9,
+        -5
+      ],
+      "position_threejs": [
+        -1.6,
+        -5,
+        -9
+      ],
+      "reserved_body_turn_radius": 0.75,
+      "reserved_height": 1.79,
+      "facing_direction_blender": [
+        1.0,
+        0.0,
+        0
+      ],
+      "recommended_interaction_range": 1.9,
+      "animation_runtime_tested": false
+    },
+    {
+      "name": "Interaction_Treasure_2_Right",
+      "treasure_id": 2,
+      "level": 2,
+      "preferred": false,
+      "position": [
+        1.6,
+        9,
+        -5
+      ],
+      "position_threejs": [
+        1.6,
+        -5,
+        -9
+      ],
+      "reserved_body_turn_radius": 0.75,
+      "reserved_height": 1.79,
+      "facing_direction_blender": [
+        -1.0,
+        0.0,
+        0
+      ],
+      "recommended_interaction_range": 1.9,
+      "animation_runtime_tested": false
+    },
+    {
+      "name": "Interaction_Treasure_3_Front",
+      "treasure_id": 3,
+      "level": 3,
+      "preferred": true,
+      "position": [
+        0,
+        4.55,
+        -10
+      ],
+      "position_threejs": [
+        0,
+        -10,
+        -4.55
+      ],
+      "reserved_body_turn_radius": 0.75,
+      "reserved_height": 1.79,
+      "facing_direction_blender": [
+        0.0,
+        1.0,
+        0
+      ],
+      "recommended_interaction_range": 1.9,
+      "animation_runtime_tested": false
+    },
+    {
+      "name": "Interaction_Treasure_3_Left",
+      "treasure_id": 3,
+      "level": 3,
+      "preferred": false,
+      "position": [
+        -1.6,
+        6,
+        -10
+      ],
+      "position_threejs": [
+        -1.6,
+        -10,
+        -6
+      ],
+      "reserved_body_turn_radius": 0.75,
+      "reserved_height": 1.79,
+      "facing_direction_blender": [
+        1.0,
+        0.0,
+        0
+      ],
+      "recommended_interaction_range": 1.9,
+      "animation_runtime_tested": false
+    },
+    {
+      "name": "Interaction_Treasure_3_Right",
+      "treasure_id": 3,
+      "level": 3,
+      "preferred": false,
+      "position": [
+        1.6,
+        6,
+        -10
+      ],
+      "position_threejs": [
+        1.6,
+        -10,
+        -6
+      ],
+      "reserved_body_turn_radius": 0.75,
+      "reserved_height": 1.79,
+      "facing_direction_blender": [
+        -1.0,
+        0.0,
+        0
+      ],
+      "recommended_interaction_range": 1.9,
+      "animation_runtime_tested": false
+    }
+  ],
+  "runtime_animation_tested": false,
+  "instruction": "Approach from one of these feet positions; never teleport the player to the treasure centre. Final dig/open animations still require game testing."
+}

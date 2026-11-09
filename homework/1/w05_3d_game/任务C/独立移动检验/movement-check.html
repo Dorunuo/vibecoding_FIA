@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>任务C · 独立 WASD 移动检验</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 20px; background: #101c28; color: #edf4f6; font: 16px/1.6 system-ui, sans-serif; }
+    main { max-width: 900px; margin: auto; }
+    h1 { font-size: 24px; }
+    canvas { display: block; width: 100%; background: #172b36; border: 2px solid #589aaf; outline-offset: 3px; }
+    button, a { color: #11202b; background: #b0e8dc; border: 0; padding: 8px 14px; border-radius: 6px; font: inherit; }
+    #status { white-space: pre-wrap; background: #203543; padding: 12px; min-height: 140px; }
+    .note { color: #ffdc91; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>独立 WASD 移动检验（不是主游戏）</h1>
+  <p>点击下方画布，再按住 <b>W 上 / A 左 / S 下 / D 右</b>。青色角色应移动，松开立即停止；支持斜向移动。边框是活动范围。</p>
+  <p class="note">本页使用独立二维俯视画布，无 Three.js、相机、碰撞或采集依赖。不接入主游戏，也不会让主游戏双倍移动。</p>
+  <canvas id="field" width="800" height="600" tabindex="0" aria-label="WASD 移动测试场地，点击后按 WASD"></canvas>
+  <pre id="status">脚本尚未就绪。若长时间停留此提示，请检查页面是否通过项目服务器打开，以及浏览器 Console 报错。</pre>
+  <button id="reset" type="button">复位到中心</button>
+  <p>判断：按键显示变化且坐标/角色移动 = 此检验页输入与移动正常。这里只通过，不代表主游戏已修复。</p>
+</main>
+<script type="module">
+  import { createMovementKeys, stepMovement } from './movement-check.js';
+  const canvas = document.querySelector('#field');
+  const status = document.querySelector('#status');
+  const context = canvas.getContext('2d');
+  if (!context) throw new Error('浏览器无法创建 Canvas 2D 上下文');
+  let position = { x: 0, z: 0 };
+  let lastEvent = '尚未收到 WASD；请点击画布并按键';
+  let frames = 0;
+  let previousTime = null;
+  let frameId;
+  const input = createMovementKeys(window, text => { lastEvent = text; });
+  const focusCanvas = () => canvas.focus({ preventScroll: true });
+  const clearHidden = () => { if (document.hidden) input.clear(); };
+  const reset = () => { position = { x: 0, z: 0 }; input.clear(); focusCanvas(); };
+  canvas.addEventListener('pointerdown', focusCanvas);
+  document.querySelector('#reset').addEventListener('click', reset);
+  document.addEventListener('visibilitychange', clearHidden);
+  function draw() {
+    const scale = 27;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.save();
+    context.translate(400, 300);
+    context.strokeStyle = '#294553';
+    context.lineWidth = 1;
+    for (let i = -10; i <= 10; i++) {
+      context.beginPath();
+      context.moveTo(i * scale, -10 * scale); context.lineTo(i * scale, 10 * scale);
+      context.moveTo(-10 * scale, i * scale); context.lineTo(10 * scale, i * scale);
+      context.stroke();
+    }
+    context.strokeStyle = '#dfb76f';
+    context.strokeRect(-10 * scale, -10 * scale, 20 * scale, 20 * scale);
+    context.fillStyle = '#87ead5';
+    context.beginPath();
+    context.arc(position.x * scale, position.z * scale, 12, 0, Math.PI * 2);
+    context.fill();
+    context.fillStyle = '#fff';
+    context.font = '14px system-ui';
+    context.fillText('角色', position.x * scale + 16, position.z * scale + 5);
+    context.fillText('W ↑ / S ↓ / A ← / D →', -255, -275);
+    context.restore();
+  }
+  function tick(time) {
+    const dt = previousTime === null ? 0 : (time - previousTime) / 1000;
+    previousTime = time;
+    position = stepMovement(position, input.keys, dt);
+    draw();
+    frames++;
+    status.textContent = `独立移动脚本：运行中（帧 ${frames}）\n页面焦点：${document.hasFocus() ? '有' : '无，请点击页面'}\n最近事件：${lastEvent}\n当前按住：${[...input.keys].join(', ') || '无'}\n坐标：X=${position.x.toFixed(2)}  Z=${position.z.toFixed(2)}（W 减小 Z）`;
+    frameId = requestAnimationFrame(tick);
+  }
+  frameId = requestAnimationFrame(tick);
+  window.addEventListener('pagehide', () => {
+    cancelAnimationFrame(frameId);
+    input.dispose();
+    canvas.removeEventListener('pointerdown', focusCanvas);
+    document.removeEventListener('visibilitychange', clearHidden);
+    document.querySelector('#reset').removeEventListener('click', reset);
+  }, { once: true });
+  // 禁止恢复已清理的 bfcache 实例，返回本页时重新初始化。
+  window.addEventListener('pageshow', event => { if (event.persisted) location.reload(); });
+</script>
+</body>
+</html>
