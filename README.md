@@ -4,7 +4,7 @@
 
 ## 在线游玩
 
-GitHub Pages 发布完成后填写：`https://<用户名>.github.io/<仓库名>/`
+GitHub Pages 发布完成后填写：https://everay666.github.io/vibecoding_FIA/
 
 ## 本地运行
 
