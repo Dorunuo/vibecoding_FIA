@@ -16,7 +16,7 @@ GitHub 仓库 Settings → Pages → Deploy from a branch → `main` → `/(root
 
 ## 已知限制与素材
 
-浏览器／网络需支持 WebGL 并能访问 jsDelivr；需由团队实际检查画面、玩法和声音。素材来源、作者许可及各成员贡献请由团队确认后填写。Three.js 版本为 0.170.0。
+浏览器／网络需支持 WebGL 并能访问 jsDelivr；。素材均由ai生成，Three.js 版本为 0.170.0。
 
 
 
